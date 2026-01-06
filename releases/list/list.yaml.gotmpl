@@ -1,0 +1,5 @@
+{{- range $item := .Values.list }}
+---
+name: {{ $item.name }}
+values: {{ $item.values | toYaml | nindent 2 }}
+{{- end }}
