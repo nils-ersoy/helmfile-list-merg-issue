@@ -1,0 +1,12 @@
+---
+values:
+  - values.yaml
+---
+environments:
+  default:
+    values:
+{{ .Values.overwrite | toYaml | indent 6 }}
+---
+releases:
+  - name: list
+    chart: ./releases/list
