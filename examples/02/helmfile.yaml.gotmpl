@@ -1,4 +1,4 @@
-# 02 - "list" with only name provided -> NOK
+# 02 - "list" not provided -> OK
 
 # Expected:
 ###########################################################################
@@ -17,14 +17,14 @@
 # ---
 # name: a
 # values: 
-#   - 1
-#   - 2
+#   null
 #
 ###########################################################################
 ###########################################################################
 ---
 helmfiles:
-  - path: ../../helmfile.yaml
+  - path: ../../helmfile.yaml.gotmpl
     values:
-      - list:
-          - name: a
+      - overwrite:
+          - list:
+              - name: a
